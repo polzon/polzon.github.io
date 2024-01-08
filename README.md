@@ -1,2 +1,2 @@
-# polzon.github.com
+# polzon.github.io
 Personal website
