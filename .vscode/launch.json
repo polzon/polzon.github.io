@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "npm dev",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm.cmd",
+            "runtimeArgs": [
+                "run",
+                "dev",
+                "--",
+                "--open",
+            ],
+        },
+        {
+            "name": "Run svelte-kit",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "svelte-kit",
+            "cwd": "${workspaceFolder}",
+            "args": []
+        },
+    ]
+}
