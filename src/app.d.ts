@@ -4,7 +4,6 @@
 
 declare global {
 	namespace App {
-		export const prerender = true;
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
