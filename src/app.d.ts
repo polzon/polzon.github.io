@@ -1,10 +1,10 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-//export const prerender = true;
 
 declare global {
 	namespace App {
+		export const prerender = true;
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}

@@ -19,32 +19,30 @@
     color: white;
     background-color: darkred;
   }
-  :global(body) {
-    @media (prefers-color-scheme: dark) {
-      a:hover,
-      a:active {
-        color: darkred;
-      }
-      a:link,
-      a:visited {
-        color: #cf462d;
-      }
+  @media (prefers-color-scheme: dark) {
+    a:hover,
+    a:active {
+      color: darkred;
     }
-    @media (prefers-color-scheme: light) {
-      a:hover,
-      a:active {
-        color: red;
-      }
-      a:link,
-      a:visited {
-        color: darkred;
-      }
+    a:link,
+    a:visited {
+      color: #cf462d;
     }
   }
-  hr {
-    height: 1px;
-    border-width: 0;
-    color: darkred;
-    background-color: darkred;
+  @media (prefers-color-scheme: light) {
+    a:hover,
+    a:active {
+      color: red;
+    }
+    a:link,
+    a:visited {
+      color: darkred;
+    }
   }
+hr {
+  height: 1px;
+  border-width: 0;
+  color: darkred;
+  background-color: darkred;
+}
 </style>
