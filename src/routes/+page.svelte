@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Header from './header.svelte';
+  import Nav from './header.svelte';
 </script>
 
-<Header />
+<Nav />
 
 <div>
     <p>
@@ -35,67 +35,3 @@
       <p><em>Thanks for visiting,<br />- Zack</em></p>
     </footer>
 </div>
-
-<style>
-  * {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* font-family: Tahoma, Verdana, Arial, sans-serif; */
-  }
-
-:global(body) {
-    margin: 2em auto;
-    max-width: 35em;
-    width: auto;
-    min-width: 10em;
-    padding: 0 0;
-    font-size: 14px;
-    line-height: 1.42857143;
-  }
-  b {
-    font-weight: bold;
-  }
-@media (prefers-color-scheme: light) {
-  :global(body) {
-      color: #1f2328;
-      background-color: white;
-    }
-    a:hover,
-    a:active {
-      color: red;
-    }
-    a:link,
-    a:visited {
-      color: darkred;
-    }
-    *::-moz-selection {
-      color: white;
-      background-color: darkred;
-    }
-  }
-  @media (prefers-color-scheme: dark) {
-    :global(body) {
-      color:white;
-      background-color: #1f2328;
-
-    }
-    a:hover, a:active {
-      color: darkred;
-    }
-    a:link,
-    a:visited {
-      color: #cf462d;
-    }
-    *::-moz-selection {
-      color: white;
-      background-color: darkred;
-    }
-  }
-  @media screen and (max-width: 40em) {
-    * {
-      width: auto;
-      max-width: 100%;
-      padding: 0 1em;
-    }
-  }
-
-</style>
