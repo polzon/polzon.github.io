@@ -1,6 +1,5 @@
 <header>
   <div style="text-align: center;">
-    <p></p>
     <h1><b>Zack Polson</b></h1>
     <a href="./">Home</a> |
     <a href="./">Blog</a> |

@@ -1,8 +1,10 @@
-@import url(main.css);
-
 * {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* font-family: Tahoma, Verdana, Arial, sans-serif; */
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 body {
@@ -16,7 +18,7 @@ body {
 }
 
 b {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 hr {

@@ -36,6 +36,6 @@
   </p>
   <div>
     <footer>
-      <p><em>Thanks for visiting,<br />- Zack</em></p>
+      <p><em>Thanks for visiting,<br />- Zack Polson</em></p>
     </footer>
 </div>
