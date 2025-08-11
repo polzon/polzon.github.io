@@ -22,16 +22,8 @@
     <a href="https://github.com/polzon/">check out my GitHub</a>.<br />
   </p>
   <p>
-    <b>Resources:</b><br />
-    I'm working on an unnamed game, check out my
-    <a href="https://shipp.dev/demo">public web build</a>.<br />
-    You can check out some of my
-    <a href="https://shipp.dev/fs.php">browser fingerprint research</a>.<br />
-  </p>
-  <p>
     <b>Contact:</b><br />
     Email: <a href="mailto:zack@polson.dev">zack@polson.dev</a>
-    (<a href="https://shipp.dev/pubkey.txt">pgp</a>)<br />
     Bsky: <a href="https://bsky.app/profile/polson.dev">@polson.dev</a><br />
   </p>
   <div>
