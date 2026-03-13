@@ -6,7 +6,7 @@
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "npm.cmd",
+            "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run",
                 "dev",
