@@ -1,6 +1,19 @@
 {
 	"name": "Node.js & TypeScript",
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:4-24-trixie",
+	"containerEnv": {
+		"CHOKIDAR_USEPOLLING": "true",
+		"WATCHPACK_POLLING": "true",
+		"WATCHPACK_POLLING_INTERVAL": "1000"
+	},
+	"forwardPorts": [
+		3000
+	],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js"
+		}
+	},
 	"features": {
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
