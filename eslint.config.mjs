@@ -13,6 +13,20 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Allow Tailwind v4 @theme inline CSS at-rule
+      "at-rule-no-unknown": ["error", { ignoreAtRules: ["theme", "import", "layer", "apply", "tailwind"] }],
+    },
+    overrides: [
+      {
+        files: ["*.css"],
+        rules: {
+          "at-rule-no-unknown": ["error", { ignoreAtRules: ["theme", "import", "layer", "apply", "tailwind"] }],
+        },
+      },
+    ],
+  },
 ]);
 
 export default eslintConfig;
