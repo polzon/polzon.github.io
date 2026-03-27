@@ -3,8 +3,9 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
+  { label: "Play", href: "/game" },
   {
-    label: "Quintessence",
+    label: "itch.io",
     href: "https://polzon.itch.io/quintessence",
     external: true,
   },
@@ -33,7 +34,6 @@ export default function Header() {
         </nav>
         <p />
       </div>
-      <hr />
     </header>
   );
 }

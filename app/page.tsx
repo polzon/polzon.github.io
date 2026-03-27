@@ -1,3 +1,5 @@
+import Footer from "./components/Footer";
+
 export default function HomeRemake() {
   return (
     <main>
@@ -32,6 +34,8 @@ export default function HomeRemake() {
           <br />
         </p>
       </div>
+
+      <Footer />
     </main>
   );
 }

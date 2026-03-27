@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 const SITE_URL = "https://zack.polson.dev";
 const isDev = process.env.NODE_ENV !== "production";
@@ -10,6 +8,7 @@ const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
   "base-uri 'self'",
   "form-action 'self'",
+  "frame-src 'self' https://itch.io https://*.itch.io",
   "frame-ancestors 'none'",
   "object-src 'none'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
@@ -106,7 +105,6 @@ export default function RootLayout({
         <section>
           <Header />
           {children}
-          <Footer />
         </section>
       </body>
     </html>
