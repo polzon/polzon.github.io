@@ -1,10 +1,6 @@
-import Header from "@/app/components/Header";
-
 export default function HomeRemake() {
     return (
         <main>
-            <Header />
-
             <div>
                 <p>
                     <b>About Me:</b>
