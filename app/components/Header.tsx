@@ -9,7 +9,7 @@ const NAV_LINKS = [
 export default function Header() {
   return (
     <header>
-      <div style={{ textAlign: "center" }}>
+      <div className="site-header">
         <h1>
           <b>Zack Polson</b>
         </h1>

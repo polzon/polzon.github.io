@@ -32,6 +32,10 @@ h1 {
   margin-block-end: 5px;
 }
 
+.site-header {
+  text-align: center;
+}
+
 b {
   font-weight: 700;
 }

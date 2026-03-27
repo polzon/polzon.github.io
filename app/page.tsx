@@ -1,37 +1,6 @@
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://zack.polson.dev/#person",
-      name: "Zack Polson",
-      url: "https://zack.polson.dev/",
-      sameAs: [
-        "https://github.com/polzon/",
-        "https://bsky.app/profile/polson.dev",
-      ],
-      email: "mailto:zack@polson.dev",
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://zack.polson.dev/#website",
-      url: "https://zack.polson.dev/",
-      name: "Zack Polson",
-      description: "Personal website of Zack Polson.",
-      publisher: {
-        "@id": "https://zack.polson.dev/#person",
-      },
-    },
-  ],
-};
-
 export default function HomeRemake() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
       <div>
         <p>
           <b>About Me:</b>
@@ -48,6 +17,10 @@ export default function HomeRemake() {
           For some of my work,{" "}
           <a href="https://github.com/polzon/">check out my GitHub</a>.
           <br />
+          For a sneak peek of my upcoming game <i>Quintessence</i>, {""}
+          <a href="https://polzon.itch.io/quintessence">
+            check out the unlisted itch.io page.
+          </a>
         </p>
       </div>
 
