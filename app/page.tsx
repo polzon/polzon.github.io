@@ -1,6 +1,37 @@
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://zack.polson.dev/#person",
+      name: "Zack Polson",
+      url: "https://zack.polson.dev/",
+      sameAs: [
+        "https://github.com/polzon/",
+        "https://bsky.app/profile/polson.dev",
+      ],
+      email: "mailto:zack@polson.dev",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://zack.polson.dev/#website",
+      url: "https://zack.polson.dev/",
+      name: "Zack Polson",
+      description: "Personal website of Zack Polson.",
+      publisher: {
+        "@id": "https://zack.polson.dev/#person",
+      },
+    },
+  ],
+};
+
 export default function HomeRemake() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div>
         <p>
           <b>About Me:</b>
