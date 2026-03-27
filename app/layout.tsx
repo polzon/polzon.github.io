@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Polson.dev",
   description: "Personal website of Zack Polson.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
