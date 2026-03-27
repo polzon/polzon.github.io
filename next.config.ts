@@ -6,18 +6,9 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.BASE_PATH || "",
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    unoptimized: false,
   },
   turbopack: {},
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-      };
-    }
-    return config;
-  },
 };
 
 export default nextConfig;
