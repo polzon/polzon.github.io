@@ -1,5 +1,5 @@
 const EMBED_WIDTH = "94vw";
-const EMBED_HEIGHT = "calc(100vh - 11em)";
+const EMBED_HEIGHT = "calc(100vh - 14em)";
 const ITCHIO_FOOTER_CROP_PX = 20;
 
 export default function GameEmbed() {

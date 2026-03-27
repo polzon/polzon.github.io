@@ -3,7 +3,7 @@ import Link from "next/link";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
-  { label: "Play", href: "/game" },
+  { label: "Play", href: "/play" },
   {
     label: "itch.io",
     href: "https://polzon.itch.io/quintessence",
