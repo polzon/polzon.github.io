@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // turbopack: {},
+  output: "export",
+  basePath: process.env.BASE_PATH || "",
+  assetPrefix: process.env.BASE_PATH || "",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  turbopack: {},
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {
