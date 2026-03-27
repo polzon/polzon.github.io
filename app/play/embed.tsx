@@ -1,38 +1,33 @@
-const EMBED_WIDTH = "94vw";
-const EMBED_HEIGHT = "calc(100vh - 14em)";
 const ITCHIO_FOOTER_CROP_PX = 20;
 
-export default function GameEmbed() {
+export default function GameEmbed({
+  embed_width,
+  embed_height,
+}: {
+  embed_width?: string;
+  embed_height?: string;
+}) {
   return (
-    <main
+    <div
       style={{
-        width: "100vw",
-        maxWidth: "none",
-        margin: 0,
-        marginLeft: "calc(50% - 50vw)",
-        padding: 0,
+        width: embed_width,
+        height: embed_height,
+        margin: "auto",
+        overflow: "hidden",
+        flex: 1,
       }}
     >
-      <div
+      <iframe
+        src="https://itch.io/embed-upload/16528022?color=181a1b"
+        allowFullScreen
+        title="Quintessence"
         style={{
-          width: EMBED_WIDTH,
-          height: EMBED_HEIGHT,
-          margin: "auto",
-          overflow: "hidden",
+          display: "block",
+          width: "100%",
+          height: `calc(100% + ${ITCHIO_FOOTER_CROP_PX}px)`,
+          border: 0,
         }}
-      >
-        <iframe
-          src="https://itch.io/embed-upload/16528022?color=181a1b"
-          allowFullScreen
-          title="Quintessence"
-          style={{
-            display: "block",
-            width: "100%",
-            height: `calc(100% + ${ITCHIO_FOOTER_CROP_PX}px)`,
-            border: 0,
-          }}
-        />
-      </div>
-    </main>
+      />
+    </div>
   );
 }
