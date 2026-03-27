@@ -1,6 +1,9 @@
 {
-    "js/ts.tsdk.path": "node_modules/typescript/lib",
-    "github-actions.workflows.pinned.workflows": [
-        ".github/workflows/deploy.yml"
-    ]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "github-actions.workflows.pinned.workflows": [
+    ".github/workflows/deploy.yml"
+  ]
 }
