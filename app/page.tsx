@@ -17,10 +17,8 @@ export default function HomeRemake() {
           For some of my work,{" "}
           <a href="https://github.com/polzon/">check out my GitHub</a>.
           <br />
-          For a sneak peek of my upcoming game <i>Quintessence</i>, {""}
-          <a href="https://polzon.itch.io/quintessence">
-            check out the unlisted itch.io page.
-          </a>
+          For a sneak peek of my upcoming game <i>Quintessence</i>, check out my
+          secret <a href="https://polzon.itch.io/quintessence">itch.io page</a>.
         </p>
       </div>
 
