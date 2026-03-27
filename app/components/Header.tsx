@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Blog", href: "/" },
-  { label: "Play", href: "/" },
-  { label: "About", href: "/" },
-  { label: "Contact", href: "/" },
+  { label: "Blog", href: "/blog" },
+  {
+    label: "Quintessence",
+    href: "https://polzon.itch.io/quintessence",
+    external: true,
+  },
 ];
 
 export default function Header() {
@@ -16,7 +20,13 @@ export default function Header() {
         <nav>
           {NAV_LINKS.map((link, i) => (
             <span key={link.label}>
-              <a href={link.href}>{link.label}</a>
+              {link.external ? (
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href}>{link.label}</Link>
+              )}
               {i < NAV_LINKS.length - 1 && " | "}
             </span>
           ))}
