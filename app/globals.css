@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary-text: darkred;
+  --primary-link: red;
+  --primary-visited: #ff6b6b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,13 +15,6 @@
     --foreground: #ededed;
   }
 }
-
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 
 main,
 body {
@@ -75,23 +72,23 @@ p {
 
   a:hover,
   a:active {
-    color: red;
+    color: var(--primary-link);
   }
 
   a:link,
   a:visited {
-    color: darkred;
+    color: var(--primary-text);
   }
 
   hr {
-    color: darkred;
-    background-color: darkred;
+    color: var(--primary-text);
+    background-color: var(--primary-text);
   }
 
   *::-moz-selection,
   *::selection {
     color: white;
-    background-color: darkred;
+    background-color: var(--primary-text);
   }
 }
 
@@ -103,12 +100,12 @@ p {
 
   a:hover,
   a:active {
-    color: darkred;
+    color: var(--primary-text);
   }
 
   a:link,
   a:visited {
-    color: #ff6b6b;
+    color: var(--primary-visited);
   }
 
   b,
@@ -124,7 +121,7 @@ p {
   *::-moz-selection,
   *::selection {
     color: #e8e6e3;
-    background-color: darkred;
+    background-color: var(--primary-text);
   }
 }
 
