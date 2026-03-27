@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.BASE_PATH || "",
   trailingSlash: true,
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
   turbopack: {},
 };
