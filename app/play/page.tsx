@@ -10,9 +10,13 @@ export default function GamePage() {
   return (
     <section
       style={{
+        display: "flex",
         flexDirection: "column",
         padding: 0,
-        width: EMBED_WIDTH,
+        width: "100dvw",
+        maxWidth: "100dvw",
+        marginLeft: "calc(50% - 50dvw)",
+        marginRight: "calc(50% - 50dvw)",
         height: EMBED_HEIGHT,
       }}
     >

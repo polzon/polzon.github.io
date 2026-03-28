@@ -10,11 +10,11 @@ export default function GameEmbed({
   return (
     <div
       style={{
-        width: embed_width,
+        width: embed_width ?? "100dvw",
         height: embed_height,
-        margin: "auto",
+        margin: "0 auto",
         overflow: "hidden",
-        flex: "flex-grow",
+        maxWidth: "100dvw",
       }}
     >
       <iframe
