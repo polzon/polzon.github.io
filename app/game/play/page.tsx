@@ -1,12 +1,12 @@
 import GameEmbed from "./embed";
-import GameDownload from "./download";
+import GameDownload from "../download";
 
 // const EMBED_WIDTH = "94vw";
 const EMBED_WIDTH = "100%";
 const EMBED_HEIGHT = "calc(100vh - 14em)";
 // const EMBED_HEIGHT = "100%";
 
-export default function GamePage() {
+export default function PlayPage() {
   return (
     <section
       style={{
