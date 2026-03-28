@@ -14,7 +14,7 @@ export default function GameEmbed({
         height: embed_height,
         margin: "auto",
         overflow: "hidden",
-        flex: 1,
+        flex: "flex-grow",
       }}
     >
       <iframe
