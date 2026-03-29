@@ -10,11 +10,13 @@ export default function GameEmbed({
   return (
     <div
       style={{
-        width: embed_width ?? "100dvw",
-        height: embed_height,
-        margin: "0 auto",
+        display: "flex",
+        flexDirection: "column",
+        flex: 1,
+        minHeight: 0,
         overflow: "hidden",
-        maxWidth: "100dvw",
+        height: embed_height,
+        width: embed_width ?? "100%",
       }}
     >
       <iframe
@@ -23,6 +25,8 @@ export default function GameEmbed({
         title="Quintessence"
         style={{
           display: "block",
+          flex: 1,
+          minHeight: 0,
           width: "100%",
           height: `calc(100% + ${ITCHIO_FOOTER_CROP_PX}px)`,
           border: 0,
