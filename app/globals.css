@@ -24,10 +24,22 @@ body {
 }
 
 .page-shell {
+  display: flex;
+  flex-direction: column;
   max-width: 35em;
-  margin: 2em auto;
+  min-height: calc(100dvh - 2em);
+  margin: 2em auto 0;
   width: auto;
   min-width: 10em;
+}
+
+.page-shell > header {
+  flex: 0 0 auto;
+}
+
+.page-shell > :not(header) {
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 h1 {
