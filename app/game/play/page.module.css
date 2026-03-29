@@ -1,16 +1,17 @@
 :global(body:has(.playPageRoot)) {
-  width: 100dvw;
-  max-width: 100dvw;
-  min-width: 0;
   margin: 0;
   padding: 0;
 }
 
-:global(body:has(.playPageRoot) > section) {
+:global(body:has(.playPageRoot) .page-shell) {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
   width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .root {

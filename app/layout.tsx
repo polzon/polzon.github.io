@@ -102,7 +102,7 @@ export default function RootLayout({
         <meta name="darkreader-lock" />
       </head>
       <body>
-        <section>
+        <section className="page-shell">
           <Header />
           {children}
         </section>
