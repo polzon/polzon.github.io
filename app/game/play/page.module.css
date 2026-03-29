@@ -3,6 +3,7 @@
   max-width: 100dvw;
   min-width: 0;
   margin: 0;
+  padding: 0;
 }
 
 :global(body:has(.playPageRoot) > section) {
