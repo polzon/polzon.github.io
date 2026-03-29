@@ -1,5 +1,8 @@
 import styles from "./embed.module.css";
 
+const ITCHIO_TITLE = "Quintessence";
+const ITCHIO_GAME_ID = "16528022";
+const ITCHIO_COLOR = "181a1b";
 const ITCHIO_FOOTER_CROP_PX = 20;
 
 export default function EmbedFrame({
@@ -24,9 +27,9 @@ export default function EmbedFrame({
       style={{ width: resolvedWidth, height: resolvedHeight }}
     >
       <iframe
-        src="https://itch.io/embed-upload/16528022?color=181a1b"
+        src={`https://itch.io/embed-upload/${ITCHIO_GAME_ID}?color=${ITCHIO_COLOR}`}
         allowFullScreen
-        title="Quintessence"
+        title={ITCHIO_TITLE}
         className={styles.frame}
         style={{ marginBottom: footerCropMargin }}
       />
