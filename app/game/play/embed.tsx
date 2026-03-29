@@ -3,10 +3,14 @@ const ITCHIO_FOOTER_CROP_PX = 20;
 export default function GameEmbed({
   embed_width,
   embed_height,
+  show_banner,
 }: {
   embed_width?: string;
   embed_height?: string;
+  show_banner?: boolean;
 }) {
+  const footerCropMargin = show_banner ? "0" : `-${ITCHIO_FOOTER_CROP_PX}px`;
+
   return (
     <div
       style={{
@@ -29,7 +33,7 @@ export default function GameEmbed({
           minHeight: 0,
           width: "100%",
           height: "100%",
-          marginBottom: `-${ITCHIO_FOOTER_CROP_PX}px`,
+          marginBottom: footerCropMargin,
           border: 0,
         }}
       />
