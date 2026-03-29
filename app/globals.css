@@ -1,21 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  --primary-text: darkred;
-  --primary-link: red;
-  --primary-visited: #ff6b6b;
-
   color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -56,15 +42,6 @@ b {
   font-weight: 700;
 }
 
-hr {
-  height: 1px;
-  border-width: 0;
-  min-width: 10em;
-  width: auto;
-  max-width: 35em;
-  align-self: center;
-}
-
 a {
   text-decoration: none;
 }
@@ -85,63 +62,63 @@ p {
 }
 
 @media (prefers-color-scheme: light) {
+  :root {
+    --light-background: #faf4f2;
+    --light-text: #29242a;
+    --light-primary-link: #1c8ca8;
+    --light-selection-background: #269d69;
+    --light-selection-text: var(--light-background);
+  }
+
   * {
-    color: #1f2328;
-    background-color: white;
+    color: var(--light-text);
+    background-color: var(--light-background);
   }
 
   a:hover,
   a:active {
-    color: var(--primary-link);
+    color: var(--light-primary-link);
   }
 
   a:link,
   a:visited {
-    color: var(--primary-text);
-  }
-
-  hr {
-    color: var(--primary-text);
-    background-color: var(--primary-text);
+    color: var(--light-primary-link);
   }
 
   *::-moz-selection,
   *::selection {
-    color: white;
-    background-color: var(--primary-text);
+    color: var(--light-selection-text);
+    background-color: var(--light-selection-background);
   }
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --dark-background: #2d2a2e;
+    --dark-text: #fcfcfa;
+    --dark-primary-link: #ff6188;
+    --dark-selection-background: #78dce8;
+    --dark-selection-text: var(--dark-background);
+  }
   * {
-    color: #c8c3bc;
-    background-color: #181a1b;
+    color: var(--dark-text);
+    background-color: var(--dark-background);
   }
 
   a:hover,
   a:active {
-    color: var(--primary-text);
+    color: var(--dark-primary-link);
   }
 
   a:link,
   a:visited {
-    color: var(--primary-visited);
-  }
-
-  b,
-  a::-moz-selection {
-    color: #e8e6e3;
-    font-weight: bolder;
-  }
-
-  hr {
-    background-color: #e8e6e3;
+    color: var(--dark-primary-link);
   }
 
   *::-moz-selection,
   *::selection {
-    color: #e8e6e3;
-    background-color: var(--primary-text);
+    color: var(--dark-selection-text);
+    background-color: var(--dark-selection-background);
   }
 }
 
