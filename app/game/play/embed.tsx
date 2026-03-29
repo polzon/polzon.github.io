@@ -15,7 +15,7 @@ export default function GameEmbed({
         flex: 1,
         minHeight: 0,
         overflow: "hidden",
-        height: embed_height,
+        height: embed_height ?? "100%",
         width: embed_width ?? "100%",
       }}
     >
@@ -28,7 +28,8 @@ export default function GameEmbed({
           flex: 1,
           minHeight: 0,
           width: "100%",
-          height: `calc(100% + ${ITCHIO_FOOTER_CROP_PX}px)`,
+          height: "100%",
+          marginBottom: `-${ITCHIO_FOOTER_CROP_PX}px`,
           border: 0,
         }}
       />
