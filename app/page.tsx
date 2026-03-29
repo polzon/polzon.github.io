@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Footer from "./components/Footer";
 
 export default function HomeRemake() {
@@ -17,10 +18,11 @@ export default function HomeRemake() {
       <div>
         <p>
           For some of my work,{" "}
-          <a href="https://github.com/polzon/">check out my GitHub</a>.
-          <br />
-          For a sneak peek of my upcoming game <i>Quintessence</i>, check out my
-          secret <a href="https://polzon.itch.io/quintessence">itch.io page</a>.
+          <Link href="https://github.com/polzon/">check out my GitHub</Link>.
+        </p>
+        <p>
+          You can try an early preview of my upcoming game <i>Quintessence</i>{" "}
+          <Link href="/game/play">in your browser</Link>.
         </p>
       </div>
 
@@ -28,9 +30,10 @@ export default function HomeRemake() {
         <p>
           <b>Contact:</b>
           <br />
-          Email: <a href="mailto:zack@polson.dev">zack@polson.dev</a>
+          Email: <Link href="mailto:zack@polson.dev">zack@polson.dev</Link>
           <br />
-          Bsky: <a href="https://bsky.app/profile/polson.dev">@polson.dev</a>
+          Bsky:{" "}
+          <Link href="https://bsky.app/profile/polson.dev">@polson.dev</Link>
           <br />
         </p>
       </div>

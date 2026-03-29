@@ -6,7 +6,7 @@ export default function GamePage() {
     <div>
       <h1>Quintessence</h1>
       <p>
-        <Link href="/game/play">Play in browser</Link>
+        <Link href="/game/play">Play in Browser</Link>
       </p>
       <GameDownload />
       <p>

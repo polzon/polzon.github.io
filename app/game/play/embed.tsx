@@ -2,7 +2,7 @@ import styles from "./embed.module.css";
 
 const ITCHIO_FOOTER_CROP_PX = 20;
 
-export default function GameEmbed({
+export default function EmbedFrame({
   embedWidth,
   embedHeight,
   showBanner,
