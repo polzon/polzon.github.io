@@ -5,5 +5,11 @@
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "github-actions.workflows.pinned.workflows": [
     ".github/workflows/deploy.yml"
-  ]
+  ],
+  "[css]": {
+    "editor.indentSize": 2
+  },
+  "[typescript]": {
+    "editor.indentSize": 2
+  }
 }

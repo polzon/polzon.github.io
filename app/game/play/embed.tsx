@@ -1,41 +1,34 @@
+import styles from "./embed.module.css";
+
 const ITCHIO_FOOTER_CROP_PX = 20;
 
 export default function GameEmbed({
-  embed_width,
-  embed_height,
-  show_banner,
+  embedWidth,
+  embedHeight,
+  showBanner,
 }: {
-  embed_width?: string;
-  embed_height?: string;
-  show_banner?: boolean;
+  embedWidth?: string;
+  embedHeight?: string;
+  showBanner?: boolean;
 }) {
-  const footerCropMargin = show_banner ? "0" : `-${ITCHIO_FOOTER_CROP_PX}px`;
+  const resolvedWidth = embedWidth ?? "100%";
+  const resolvedHeight = embedHeight ?? "100%";
+  const shouldShowBanner = showBanner ?? false;
+  const footerCropMargin = shouldShowBanner
+    ? "0"
+    : `-${ITCHIO_FOOTER_CROP_PX}px`;
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flex: 1,
-        minHeight: 0,
-        overflow: "hidden",
-        height: embed_height ?? "100%",
-        width: embed_width ?? "100%",
-      }}
+      className={styles.container}
+      style={{ width: resolvedWidth, height: resolvedHeight }}
     >
       <iframe
         src="https://itch.io/embed-upload/16528022?color=181a1b"
         allowFullScreen
         title="Quintessence"
-        style={{
-          display: "block",
-          flex: 1,
-          minHeight: 0,
-          width: "100%",
-          height: "100%",
-          marginBottom: footerCropMargin,
-          border: 0,
-        }}
+        className={styles.frame}
+        style={{ marginBottom: footerCropMargin }}
       />
     </div>
   );
