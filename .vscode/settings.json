@@ -4,7 +4,8 @@
   "prettier.prettierPath": "./node_modules/prettier/index.cjs",
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "github-actions.workflows.pinned.workflows": [
-    ".github/workflows/deploy.yml"
+    ".github/workflows/deploy.yml",
+    ".github/workflows/e2e.yml"
   ],
   "[css]": {
     "editor.indentSize": 2

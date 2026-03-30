@@ -7,15 +7,23 @@
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "--open"]
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "--open"
+      ]
     },
     {
-      "name": "Run svelte-kit",
+      "name": "npm build",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "svelte-kit",
       "cwd": "${workspaceFolder}",
-      "args": []
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "build"
+      ]
     }
   ]
 }

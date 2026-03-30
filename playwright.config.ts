@@ -26,5 +26,13 @@ export default defineConfig({
       name: "mobile-chrome",
       use: { ...devices["Pixel 7"] },
     },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "mobile-firefox",
+      use: { ...devices["Pixel 7"], browserName: "firefox" },
+    },
   ],
 });
