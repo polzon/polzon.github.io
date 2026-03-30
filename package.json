@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "serve:static": "http-server out -p 3000 -c-1",
+    "test:ct": "playwright test -c playwright-ct.config.ts",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:ui": "playwright test --ui"
@@ -19,6 +20,7 @@
     "ua-parser-js": "^2.0.9"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.58.2",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^25",
