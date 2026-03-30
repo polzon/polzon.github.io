@@ -1,0 +1,13 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  e2e:
+    uses: ./.github/workflows/e2e.yml
+
+  deploy:
+    needs: e2e
+    uses: ./.github/workflows/deploy.yml
