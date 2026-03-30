@@ -4,8 +4,6 @@
   "prettier.prettierPath": "./node_modules/prettier/index.cjs",
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "github-actions.workflows.pinned.workflows": [
-    ".github/workflows/deploy.yml",
-    "dynamic/dependabot/dependabot-updates",
     ".github/workflows/ci.yml"
   ],
   "[css]": {
