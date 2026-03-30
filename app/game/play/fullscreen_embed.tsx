@@ -20,6 +20,7 @@ export default function FullscreenEmbed({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [canRequestFullscreen, setCanRequestFullscreen] = useState(false);
 
   useEffect(() => {
     function handleFullscreenChange() {
@@ -30,6 +31,15 @@ export default function FullscreenEmbed({
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const supportsFullscreenApi =
+      typeof document !== "undefined" &&
+      document.fullscreenEnabled &&
+      typeof container?.requestFullscreen === "function";
+    setCanRequestFullscreen(Boolean(supportsFullscreenApi));
   }, []);
 
   const handleToggleFullscreen = useCallback(async () => {
@@ -47,7 +57,7 @@ export default function FullscreenEmbed({
 
   return (
     <div ref={containerRef} className={styles.root} style={{ width, height }}>
-      {!isFullscreen ? (
+      {canRequestFullscreen && !isFullscreen ? (
         <button
           type="button"
           className={styles.fullscreenButton}
