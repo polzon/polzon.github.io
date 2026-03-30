@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/Header";
+import Header from "./components/header_layout";
 
 const SITE_URL = "https://zack.polson.dev";
 const isDev = process.env.NODE_ENV !== "production";
