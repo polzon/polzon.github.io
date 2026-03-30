@@ -1,16 +1,58 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page, type Locator } from "@playwright/test";
 import { openPage, ROUTES } from "../support/siteAssertions";
 
 const GAME_TITLE = "Quintessence";
 const GAME_IFRAME_SRC_PATTERN =
   /https:\/\/itch\.io\/embed-upload\/16528022\?color=181a1b/;
 
+function getGameFrame(page: Page): Locator {
+  return page.locator(`iframe[title="${GAME_TITLE}"]`);
+}
+
+async function verifyFrameVisibility(frame: Locator) {
+  await expect(frame).toBeVisible();
+  await expect(frame).toHaveAttribute("src", GAME_IFRAME_SRC_PATTERN);
+}
+
+async function checkScrollBars(page: Page) {
+  const hasHorizontalScroll = await page.evaluate(
+    () => document.documentElement.scrollWidth > window.innerWidth,
+  );
+  const hasVerticalScroll = await page.evaluate(
+    () => document.documentElement.scrollHeight > window.innerHeight,
+  );
+  return { hasHorizontalScroll, hasVerticalScroll };
+}
+
+async function verifyFrameWidth(page: Page, frame: Locator) {
+  const frameBox = await frame.boundingBox();
+  const pageWidth = await page.evaluate(() => window.innerWidth);
+  expect(frameBox?.width).toBe(pageWidth);
+}
+
+async function verifyFramePositioning(
+  page: Page,
+  frame: Locator,
+  viewportHeight: number,
+) {
+  const framePosition = await frame.evaluate((el: HTMLElement) => {
+    const rect = el.getBoundingClientRect();
+    return {
+      top: rect.top,
+      bottom: rect.bottom,
+      height: rect.height,
+    };
+  });
+
+  expect(framePosition.top).toBeLessThan(300);
+  expect(framePosition.height).toBeGreaterThan(viewportHeight * 0.5);
+}
+
 test("game play route renders the embedded itch.io frame", async ({ page }) => {
   await openPage(page, ROUTES.gamePlay);
 
-  const frame = page.locator(`iframe[title="${GAME_TITLE}"]`);
-  await expect(frame).toBeVisible();
-  await expect(frame).toHaveAttribute("src", GAME_IFRAME_SRC_PATTERN);
+  const frame = getGameFrame(page);
+  await verifyFrameVisibility(frame);
 });
 
 test.describe("game play route - viewport tests", () => {
@@ -24,43 +66,19 @@ test.describe("game play route - viewport tests", () => {
     test(`${viewport.label} - iframe fills width and height with no scroll bars`, async ({
       page,
     }) => {
-      await page.setViewportSize({
-        width: viewport.width,
-        height: viewport.height,
-      });
+      await page.setViewportSize(viewport);
       await openPage(page, ROUTES.gamePlay);
 
-      const frame = page.locator(`iframe[title="${GAME_TITLE}"]`);
-      await expect(frame).toBeVisible();
+      const frame = getGameFrame(page);
+      await verifyFrameVisibility(frame);
+      await verifyFrameWidth(page, frame);
 
-      // Check that iframe reaches full width
-      const frameBox = await frame.boundingBox();
-      const pageWidth = await page.evaluate(() => window.innerWidth);
-      expect(frameBox?.width).toBe(pageWidth);
-
-      // Check no scroll bars appear on the page
-      const hasHorizontalScroll = await page.evaluate(
-        () => document.documentElement.scrollWidth > window.innerWidth,
-      );
-      const hasVerticalScroll = await page.evaluate(
-        () => document.documentElement.scrollHeight > window.innerHeight,
-      );
+      const { hasHorizontalScroll, hasVerticalScroll } =
+        await checkScrollBars(page);
       expect(hasHorizontalScroll).toBe(false);
       expect(hasVerticalScroll).toBe(false);
 
-      // Verify iframe is stretched to bottom (positioned at top of container and grows to fill available space)
-      const framePosition = await frame.evaluate((el) => {
-        const rect = el.getBoundingClientRect();
-        return {
-          top: rect.top,
-          bottom: rect.bottom,
-          height: rect.height,
-        };
-      });
-
-      // Frame should start near top and have substantial height (not constrained)
-      expect(framePosition.top).toBeLessThan(300); // Should be near the top
-      expect(framePosition.height).toBeGreaterThan(viewport.height * 0.5); // Should take up significant vertical space
+      await verifyFramePositioning(page, frame, viewport.height);
     });
   }
 });
@@ -76,25 +94,15 @@ test.describe("game play route - narrow viewport tests", () => {
     test(`${viewport.label} - vertical scroll bar appears on narrow height`, async ({
       page,
     }) => {
-      await page.setViewportSize({
-        width: viewport.width,
-        height: viewport.height,
-      });
+      await page.setViewportSize(viewport);
       await openPage(page, ROUTES.gamePlay);
 
-      const frame = page.locator(`iframe[title="${GAME_TITLE}"]`);
-      await expect(frame).toBeVisible();
+      const frame = getGameFrame(page);
+      await verifyFrameVisibility(frame);
 
-      // Check that vertical scroll bar appears (content exceeds viewport height)
-      const hasVerticalScroll = await page.evaluate(
-        () => document.documentElement.scrollHeight > window.innerHeight,
-      );
+      const { hasHorizontalScroll, hasVerticalScroll } =
+        await checkScrollBars(page);
       expect(hasVerticalScroll).toBe(true);
-
-      // Horizontal scroll bar should still not appear
-      const hasHorizontalScroll = await page.evaluate(
-        () => document.documentElement.scrollWidth > window.innerWidth,
-      );
       expect(hasHorizontalScroll).toBe(false);
     });
   }
