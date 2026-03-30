@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header_layout";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "./lib/site";
 
-const SITE_URL = "https://zack.polson.dev";
 const isDev = process.env.NODE_ENV !== "production";
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
@@ -27,7 +27,7 @@ const structuredData = {
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
-      name: "Zack Polson",
+      name: SITE_TITLE,
       url: `${SITE_URL}/`,
       sameAs: [
         "https://github.com/polzon/",
@@ -39,8 +39,8 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: `${SITE_URL}/`,
-      name: "Zack Polson",
-      description: "Personal website of Zack Polson.",
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
       publisher: {
         "@id": `${SITE_URL}/#person`,
       },
@@ -53,19 +53,19 @@ const structuredDataJson = JSON.stringify(structuredData);
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Zack Polson",
-    template: "%s | Zack Polson",
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`,
   },
-  description: "Personal website of Zack Polson.",
+  description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: "Zack Polson",
-    description: "Personal website of Zack Polson.",
-    siteName: "Zack Polson",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_TITLE,
   },
   robots: {
     index: true,

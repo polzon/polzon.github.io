@@ -1,5 +1,5 @@
 import Link from "next/link";
-import GameDownload from "./download";
+import GameDownload from "./components/GameDownload";
 
 export default function GamePage() {
   return (
