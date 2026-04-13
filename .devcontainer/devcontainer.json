@@ -18,5 +18,15 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "updateContentCommand": "npm install",
-  "postCreateCommand": "npx next telemetry disable"
+  "postCreateCommand": "npx next telemetry disable",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
 }
