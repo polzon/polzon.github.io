@@ -10,6 +10,7 @@
     "editor.indentSize": 2
   },
   "[typescript]": {
-    "editor.indentSize": 2
+    "editor.indentSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }

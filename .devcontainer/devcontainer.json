@@ -6,7 +6,9 @@
     "WATCHPACK_POLLING": "true",
     "WATCHPACK_POLLING_INTERVAL": "1000"
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ],
   "portsAttributes": {
     "3000": {
       "label": "Next.js"
@@ -15,5 +17,6 @@
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  "updateContentCommand": "npm install",
   "postCreateCommand": "npx next telemetry disable"
 }
